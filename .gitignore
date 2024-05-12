@@ -1,0 +1,4 @@
+template/.parcel-cache/
+template/.eslintcache
+template/dist/
+template/node_modules/
