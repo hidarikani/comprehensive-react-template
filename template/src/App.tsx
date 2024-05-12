@@ -5,7 +5,13 @@ import "./App.css";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <main className="col-span-12 sm:col-span-10 md:col-span-10 lg:col-span-8 xl:col-span-6 2xl:col-span-4 bg-blue-500 ">
+      <span className="invisible sm:visible">SM</span>
+      <span className="invisible md:visible">MD</span>
+      <span className="invisible lg:visible">LG</span>
+      <span className="invisible xl:visible">XL</span>
+      <span className="invisible 2xl:visible">2XL</span>
+    </main>
 
     // <Grid
     //   areas={{
