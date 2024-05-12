@@ -1,7 +1,13 @@
-import { useState } from 'react';
-import { Heading, Form, ActionButton, Well, TextField } from '@adobe/react-spectrum';
+import { useState } from "react";
+import {
+  Heading,
+  Form,
+  ActionButton,
+  Well,
+  TextField,
+} from "@adobe/react-spectrum";
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
   decrement,
   increment,
@@ -9,18 +15,20 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
+} from "./counterSlice";
 
 export function Counter() {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
   const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <>
-      <Heading level={1} id="label-counter">Counter Controlled By Redux</Heading>
+      <Heading level={1} id="label-counter">
+        Counter Controlled By Redux
+      </Heading>
       <Well>Current counter value is {count}</Well>
       <Form maxWidth="size-3600" aria-labelledby="label-counter">
         <ActionButton onPress={() => dispatch(decrement())}>

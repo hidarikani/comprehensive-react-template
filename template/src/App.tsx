@@ -1,29 +1,29 @@
-import { Grid, Flex, View } from '@adobe/react-spectrum';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Grid, Flex, View } from "@adobe/react-spectrum";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
 
 function App() {
   return (
     <Grid
       areas={{
-        base: ['header', 'nav', 'content', 'footer'],
+        base: ["header", "nav", "content", "footer"],
         M: [
-          'header   header',
-          'nav      content',
-          'nav      content',
-          'footer   footer',
+          "header   header",
+          "nav      content",
+          "nav      content",
+          "footer   footer",
         ],
         L: [
-          'header header  header',
-          'nav    content toc',
-          'nav    content toc',
-          'footer footer  footer',
+          "header header  header",
+          "nav    content toc",
+          "nav    content toc",
+          "footer footer  footer",
         ],
       }}
       columns={{
-        M: ['size-2000', '1fr'],
-        L: ['size-2000', '1fr', 'size-2000'],
+        M: ["size-2000", "1fr"],
+        L: ["size-2000", "1fr", "size-2000"],
       }}
       gap="size-100"
     >
@@ -32,7 +32,7 @@ function App() {
       </View>
       <View backgroundColor="gray-200" gridArea="nav" minHeight="size-1000">
         <Flex
-          direction={{ base: 'row', M: 'column' }}
+          direction={{ base: "row", M: "column" }}
           gap="size-100"
           margin="size-100"
         >
