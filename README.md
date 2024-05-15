@@ -104,6 +104,18 @@ configuration. The philosophy of this template is that formatting details, like
 number of spaces, don't matter as much as consistency. That's why the default
 options are used by omitting the configuration file.
 
+The author of this template prefers to disable format on save and auto save.
+Instead formatting and saving are done via keyboard shortcuts. Automatic
+formatting can be distracting. Automatic saving can create unnecessary load for
+the dev server that watches files for changes.
+
+When typing new code in a code editor, it applies some formatting rules, for 
+example, pressing "Enter" or "Tab" indents the code. For a smooth editing 
+experience editor and Prettier formatting must match. A standard for editor
+configuration exists, called [editorconfig](https://editorconfig.org/). This 
+template includes an [.editorconfig](/template/.editorconfig) file that matches
+Prettier defaults.
+
 Don't confuse linting and formatting. ESlint is mainly used to identify code
 quality issues, while Prettier is used to enforce code style. The two tools can
 clash, because ESLint does include some formatting rules. To avoid the overlap,
