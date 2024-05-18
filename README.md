@@ -170,19 +170,38 @@ swtich between them. The most popular routing library for React was chosen, that
 is [react-router](https://reactrouter.com/en/main).
 
 ## Graphical User Interface
-The application layout doesn't have to be composed of Rect components.
-Responsive layouts can be built with modern CSS features like Flexbox and Grid.
-However, building a consistent design system is a complex project by itself. To
-focus on application development, a third party style system is used, called 
-[Tailwind CSS](https://tailwindcss.com/).
+Market share of users that used mobile as their primary device to access the web
+is growing. To accommodate them the design framework must be mobile first.
+Furthermore, the variety of screen sizes is increasing, therefore, the layout
+must be responsive and adapt to aspect rations, resolutions and pixel densities.
+Lastly, when building an app off a template, it's important to customize its 
+look and feel to match your own brand. 
+
+Building a mobile first, responsive, customizable design system is a complex
+project by itself. To focus on application development, instead of styling, a
+third party style system, that matches the requirements, is used, which is
+[Tailwind CSS](https://tailwindcss.com/). 
 
 
-Creating a library of accessible GUI components, is a complex project by itself.
+GUI components provided by the browser are not sufficient. Default components
+match the design system of the operating system, not the application. As a
+result the application can look inconsistent across different operating systems.
+To tackle this issue, custom GUI components must be built. Creating a custom
+button component, might seem simple at first, however upon closer inspection,
+many requirements arise:
+
+- different states like hover, focus, active, disabled;
+- ability to display icons, text and animations;
+- accessibility which includes keyboard navigation;
+- testability;
+- documentation with examples.
+
 To focus on application development, not component design, a third party
-component library is used. Adobe's
-[React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html)
- was chosen for several reasons. Spectrum components are:
+component library is used. [Headless UI](https://headlessui.com/) was chosen for
+several reasons:
 - open-source and free,
+- works well with Tailwind,
+- unstyled by default,
 - compatible with [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) standards,
 - React based,
 - TypeScript ready.
