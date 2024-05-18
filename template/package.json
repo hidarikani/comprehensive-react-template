@@ -16,7 +16,6 @@
     "defaults"
   ],
   "dependencies": {
-    "@adobe/react-spectrum": "^3.35.0",
     "@headlessui/react": "^2.0.3",
     "@reduxjs/toolkit": "^1.9.7",
     "clsx": "^2.1.1",
