@@ -177,10 +177,18 @@ must be responsive and adapt to aspect rations, resolutions and pixel densities.
 Lastly, when building an app off a template, it's important to customize its 
 look and feel to match your own brand. 
 
+There are many ways to style React components:
+- CSS in JS,
+- CSS modules - writing an isolated style sheet for each component,
+- utility first - applying reusable CSS classes.
+
+CSS in JS violates the separation of concerns principle. React should handle component behavior and the styling should be interchangeable. CSS modules avoid conflicts but make consistency difficult, unless a style preprocessor is used. This templates favors the reusable utility class approach. To enable conditional class application, [clsx](https://github.com/lukeed/clsx) utility is used. 
+
+
 Building a mobile first, responsive, customizable design system is a complex
 project by itself. To focus on application development, instead of styling, a
 third party style system, that matches the requirements, is used, which is
-[Tailwind CSS](https://tailwindcss.com/). 
+[Tailwind CSS](https://tailwindcss.com/).
 
 
 GUI components provided by the browser are not sufficient. Default components
