@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Heading,
-  Form,
-  ActionButton,
-  Well,
-  TextField,
-} from "@adobe/react-spectrum";
+import { Button, Input } from "@headlessui/react";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
@@ -26,42 +20,48 @@ export function Counter() {
 
   return (
     <>
-      <Heading level={1} id="label-counter">
-        Counter Controlled By Redux
-      </Heading>
-      <Well>Current counter value is {count}</Well>
-      <Form maxWidth="size-3600" aria-labelledby="label-counter">
-        <ActionButton onPress={() => dispatch(decrement())}>
-          Decrement Synchronous
-        </ActionButton>
-        <ActionButton
-          aria-label="Increment value"
-          onPress={() => dispatch(increment())}
-        >
-          Increment Synchronous
-        </ActionButton>
+      <h2 id="label-counter">Counter Controlled By Redux</h2>
+      <span>Current counter value is {count}</span>
+      <Button
+        className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
+        onClick={() => dispatch(decrement())}
+      >
+        Decrement Synchronous
+      </Button>
+      <Button
+        className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
+        aria-label="Increment value"
+        onClick={() => dispatch(increment())}
+      >
+        Increment Synchronous
+      </Button>
 
-        <TextField
-          label="Increment amount"
-          value={incrementAmount}
-          onChange={setIncrementAmount}
-        />
-        <ActionButton
-          onPress={() => dispatch(incrementByAmount(incrementValue))}
-        >
-          Add Amount
-        </ActionButton>
-        <ActionButton
-          onPress={() => {
-            void dispatch(incrementAsync(incrementValue));
-          }}
-        >
-          Add Async
-        </ActionButton>
-        <ActionButton onPress={() => dispatch(incrementIfOdd(incrementValue))}>
-          Add If Odd
-        </ActionButton>
-      </Form>
+      <label htmlFor="incAmount">IncrementAmount</label>
+      <Input
+        id="incAmount"
+        value={incrementAmount}
+        onChange={(e) => setIncrementAmount(e.target.value)}
+      />
+
+      <Button
+        className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
+        onClick={() => dispatch(incrementByAmount(incrementValue))}
+      >
+        Add Amount
+      </Button>
+      <Button
+        onClick={() => {
+          void dispatch(incrementAsync(incrementValue));
+        }}
+      >
+        Add Async
+      </Button>
+      <Button
+        className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
+        onClick={() => dispatch(incrementIfOdd(incrementValue))}
+      >
+        Add If Odd
+      </Button>
     </>
   );
 }

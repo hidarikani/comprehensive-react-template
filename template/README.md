@@ -26,6 +26,8 @@ npm install
 ## Development
 First, update [package.json](package.json): name, description, author, license.
 
+Second, update `<title>` tag in [index.html](src/index.html).
+
 Then, run the following commands:
 
 ```shell
