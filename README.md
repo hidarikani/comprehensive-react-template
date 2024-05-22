@@ -96,7 +96,7 @@ to function and has two modes: type-aware and type-ignorant. On one hand, the
 type-aware mode is more accurate, on the other hand, it is slower. This template
 prioritizes code quality, therefore, the type-aware mode is used.
 
-# Code Formatting
+## Code Formatting
 At the time of writing, the most popular code formatter for JavaScript was
 Prettier. According to its maintainers, it was designed to be opinionated.
 In practice it means its users must accept an intentionally limited
@@ -158,13 +158,13 @@ of slices that further standardize state management.
 A Redux store has already been set up and typed in the template. Furthermore a 
 slice with synchronous and asynchronous actions is included.
 
-## Fetching Data
+## TODO: Fetching Data
 Most web applications load data from a server. Programming data fetching and 
 then storing it in the app state is repetitive and lacks creativity. To focus on
 creative coding programming and reduce boilerplate [RTK Query] is used. It is 
 part of the Redux Toolkit and standardizes fetching and caching.
 
-## Routing
+## TODO: Routing
 Large React applications have multiple views. A routing mechanism is required to
 swtich between them. The most popular routing library for React was chosen, that 
 is [react-router](https://reactrouter.com/en/main).
@@ -182,7 +182,11 @@ There are many ways to style React components:
 - CSS modules - writing an isolated style sheet for each component,
 - utility first - applying reusable CSS classes.
 
-CSS in JS violates the separation of concerns principle. React should handle component behavior and the styling should be interchangeable. CSS modules avoid conflicts but make consistency difficult, unless a style preprocessor is used. This templates favors the reusable utility class approach. To enable conditional class application, [clsx](https://github.com/lukeed/clsx) utility is used. 
+CSS in JS violates the separation of concerns principle. React should handle 
+component behavior and styling should be interchangeable. CSS modules avoid 
+conflicts but make consistency difficult, unless a style preprocessor is used. 
+This templates favors reusable utility classes. To enable conditional class
+application, [clsx](https://github.com/lukeed/clsx) utility is used.
 
 
 Building a mobile first, responsive, customizable design system is a complex
@@ -213,3 +217,17 @@ several reasons:
 - compatible with [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) standards,
 - React based,
 - TypeScript ready.
+
+## Deployment
+A web application is not done until it's accessible to users on the web.
+Deploying involves a server. This template doesn't include server-side
+rendering, which simplifies the web server configuration, because 
+only static files must be served.
+
+Another priority when deploying is portability. To avoid hosting provider 
+lock-in, the best solution is to package the application in a Docker container.
+
+[Nginx Docker image](https://hub.docker.com/_/nginx) is used for deployment. 
+Nginx is an efficient, production ready web server that can serve static files
+with minimal configuration, furthermore, it has an official Docker image.
+
