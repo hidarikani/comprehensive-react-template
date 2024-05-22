@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "parcel src/index.html",
-    "build": "parcel build",
+    "build": "parcel build src/index.html",
     "test": "jest",
     "lint": "eslint --cache --fix --ext .json,.ts,.tsx  src",
     "format": "prettier src --write"

@@ -1,0 +1,8 @@
+services:
+  your-web-server:
+    image: nginx:stable
+    ports:
+      - "1234:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    command: [nginx-debug, '-g', 'daemon off;']

@@ -31,8 +31,28 @@ Second, update `<title>` tag in [index.html](src/index.html).
 Then, run the following commands:
 
 ```shell
-npm run start # Parcel's dev server
+npm run start # Parcel's dev server @ http://localhost:1234
 npm run lint
 npm run format
 npm run test
+```
+
+To test with production web server, use Docker Compose. It will start Nginx 
+container. Nginx will run in debug mode. If app is rebuilt while the container
+is running, refreshing the browser page is sufficient, because `dist` folder is
+mounted as a volume.
+
+```shell
+docker compose up --detach # @ http://localhost:1234
+docker compose down
+```
+
+## Production
+```shell
+npm run build
+docker build --tag your-web-application .
+# Run production container locally:
+docker run --name your-web-app --publish 1234:80 --detach your-web-application
+docker stop your-web-app
+docker rm your-web-app
 ```
