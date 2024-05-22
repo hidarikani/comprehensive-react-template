@@ -96,7 +96,7 @@ to function and has two modes: type-aware and type-ignorant. On one hand, the
 type-aware mode is more accurate, on the other hand, it is slower. This template
 prioritizes code quality, therefore, the type-aware mode is used.
 
-# Code Formatting
+## Code Formatting
 At the time of writing, the most popular code formatter for JavaScript was
 Prettier. According to its maintainers, it was designed to be opinionated.
 In practice it means its users must accept an intentionally limited
@@ -158,13 +158,13 @@ of slices that further standardize state management.
 A Redux store has already been set up and typed in the template. Furthermore a 
 slice with synchronous and asynchronous actions is included.
 
-## Fetching Data
+## TODO: Fetching Data
 Most web applications load data from a server. Programming data fetching and 
 then storing it in the app state is repetitive and lacks creativity. To focus on
 creative coding programming and reduce boilerplate [RTK Query] is used. It is 
 part of the Redux Toolkit and standardizes fetching and caching.
 
-## Routing
+## TODO: Routing
 Large React applications have multiple views. A routing mechanism is required to
 swtich between them. The most popular routing library for React was chosen, that 
 is [react-router](https://reactrouter.com/en/main).
