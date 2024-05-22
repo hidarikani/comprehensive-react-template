@@ -228,6 +228,6 @@ Another priority when deploying is portability. To avoid hosting provider
 lock-in, the best solution is to package the application in a Docker container.
 
 [Nginx Docker image](https://hub.docker.com/_/nginx) is used for deployment. 
-Nginx i's an efficient, production ready web server that can serve static files
+Nginx is an efficient, production ready web server that can serve static files
 with minimal configuration, furthermore, it has an official Docker image.
 
