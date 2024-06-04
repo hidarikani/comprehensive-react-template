@@ -2,6 +2,7 @@
   "name": "comprehensive-react-template",
   "version": "1.0.0",
   "description": "Complete React template for bootstrapping maintainable, robust, scaleable web applications.",
+  "private": true,
   "scripts": {
     "format": "prettier . --write"
   },

@@ -5,7 +5,7 @@
   - [3. Execution Environment](#3-execution-environment)
   - [4. Package Manager](#4-package-manager)
   - [5. Programming Language](#5-programming-language)
-  - [6. Code Linting Linter](#6-code-linting-linter)
+  - [6.  Linting](#6--linting)
   - [7. Code Formatting](#7-code-formatting)
   - [8. Committing](#8-committing)
   - [9. Bundling](#9-bundling)
@@ -110,7 +110,7 @@ choice later.
 TypeScript requires type definitions for third party libraries. These are
 specified in `package.json` under the `@types/` namespace.
 
-## 6. <a name='CodeLintingLinter'></a>Code Linting Linter
+## 6. <a name='CodeLintingLinter'></a> Linting
 
 Common code quality issues are extensively documented and can be fixed with a
 linter. The most popular linter for JavaScript is ESLint. ESLint is also the
