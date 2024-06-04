@@ -1,0 +1,26 @@
+{
+  "name": "comprehensive-react-template",
+  "version": "1.0.0",
+  "description": "Complete React template for bootstrapping maintainable, robust, scaleable web applications.",
+  "private": true,
+  "scripts": {
+    "format": "prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hidarikani/comprehensive-react-template.git"
+  },
+  "keywords": [],
+  "author": "hidarikani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hidarikani/comprehensive-react-template/issues"
+  },
+  "homepage": "https://github.com/hidarikani/comprehensive-react-template#readme",
+  "devDependencies": {
+    "prettier": "3.2.5"
+  },
+  "prettier": {
+    "proseWrap": "always"
+  }
+}

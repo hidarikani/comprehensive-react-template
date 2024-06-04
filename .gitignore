@@ -1,3 +1,4 @@
+node_modules/
 template/.parcel-cache/
 template/.eslintcache
 template/dist/
