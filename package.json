@@ -19,8 +19,5 @@
   "homepage": "https://github.com/hidarikani/comprehensive-react-template#readme",
   "devDependencies": {
     "prettier": "3.2.5"
-  },
-  "prettier": {
-    "proseWrap": "always"
   }
 }
