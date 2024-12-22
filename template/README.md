@@ -1,15 +1,16 @@
 # Your Web Application
 Replace this description with an overview of your project. For reasoning behind
 technology choices made in this template visit its
-[repository](https://github.com/hidarikani/comprehensive-react-template).
+[repository][template-repo].
 
 ## Visual Studio Code
 On first run VSCode will suggest installing recommended extensions:
 - ESLint
 - Prettier
+- Editorconfig
 
 ## Dependencies
-Tested with Node.js lts/iron (v20). On Mac and Linux, use
+Tested with Node.js lts/jod (v22). On Mac and Linux, use
 [Node Version Manager](https://github.com/nvm-sh/nvm) (nvm) to manage multiple
 Node versions.
 
@@ -17,7 +18,7 @@ Package manager is npm.
 
 ```shell
 # run once:
-nvm install lts/iron
+nvm install lts/jod
 nvm install-latest-npm
 # run in each new terminal to set recommended Node version:
 nvm use # will use .nvmrc
@@ -56,3 +57,5 @@ docker run --name your-web-app --publish 1234:80 --detach your-web-application
 docker stop your-web-app
 docker rm your-web-app
 ```
+
+[template-repo]: https://github.com/hidarikani/comprehensive-react-template
