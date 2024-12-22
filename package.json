@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hidarikani/comprehensive-react-template#readme",
   "devDependencies": {
+    "npm-check-updates": "^17.1.12",
     "prettier": "3.2.5"
   }
 }
