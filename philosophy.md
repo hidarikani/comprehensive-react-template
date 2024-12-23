@@ -12,6 +12,7 @@
   - [State Management](#state-management)
   - [TODO: Fetching Data](#todo-fetching-data)
   - [TODO: Routing](#todo-routing)
+  - [TODO: Internationalization and Localization](#todo-internationalization-and-localization)
   - [Graphical User Interface](#graphical-user-interface)
   - [Deployment](#deployment)
 
@@ -174,6 +175,11 @@ part of the Redux Toolkit and standardizes fetching and caching.
 Large React applications have multiple views. A routing mechanism is required to
 swtich between them. The most popular routing library for React was chosen, that
 is [react-router](https://reactrouter.com/en/main).
+
+## TODO: Internationalization and Localization
+
+The web was designed to be global. Successful apps often have users from many
+cultures. It makes sense to enable support for multiple locales and languages.
 
 ## Graphical User Interface
 
