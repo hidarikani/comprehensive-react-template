@@ -14,6 +14,7 @@
   - [TODO: Routing](#todo-routing)
   - [TODO: Internationalization and Localization](#todo-internationalization-and-localization)
   - [Graphical User Interface](#graphical-user-interface)
+  - [TODO: Test Automation](#todo-test-automation)
   - [Deployment](#deployment)
 
 ## Integrated Development Environment (IDE)
@@ -232,6 +233,15 @@ reasons:
   standards,
 - React based,
 - TypeScript ready.
+
+## TODO: Test Automation
+
+Jest is the default test framework in the React ecosystem. It's enhanced by
+React Testing Library, which enables writing accessible and maintainable DOM
+queries. Jest doesn't paint the GUI, like a browser does, however, visual
+feedback remains an important aspect of frontend testing. That's where Cypress
+comes in. It can paint interactive snapshots of the GUI so that engineers can
+easily and intuitively debug issues.
 
 ## Deployment
 
