@@ -1,6 +1,7 @@
 # Philosophy
 
 - [Philosophy](#philosophy)
+  - [Domain](#domain)
   - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
   - [Execution Environment](#execution-environment)
   - [Package Manager](#package-manager)
@@ -16,6 +17,18 @@
   - [Graphical User Interface](#graphical-user-interface)
   - [TODO: Test Automation](#todo-test-automation)
   - [Deployment](#deployment)
+
+## Domain
+
+The most common domain for demo applications is the ubiquitous to-do list, which
+can feel uninspired. Instead, let’s explore something less conventional yet
+equally simple. This application should be stateful and not require a backend. A
+classic problem often introduced to software engineering students is [Conway’s
+Game of Life][cgol]. In this template, the game’s state is managed using Redux,
+highlighting the power of one-directional global state management. The user
+interface and styling capabilities are demonstrated through animations that
+depict the evolution of the game’s world. Additionally, a dedicated settings
+view illustrates the functionality of frontend routing.
 
 ## Integrated Development Environment (IDE)
 
@@ -277,3 +290,4 @@ with minimal configuration, furthermore, it has an official Docker image.
 [clsx]: https://github.com/lukeed/clsx
 [tailwind]: https://tailwindcss.com/
 [headlessui]: https://headlessui.com/
+[cgol]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
