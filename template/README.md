@@ -1,20 +1,25 @@
 # Your Web Application
+
 Replace this description with an overview of your project. For reasoning behind
-technology choices made in this template visit its
-[repository][template-repo].
+technology choices made in this template visit its [repository][template-repo].
 
 ## Visual Studio Code
+
 On first run VSCode will suggest installing recommended extensions:
+
 - ESLint
 - Prettier
 - Editorconfig
 
 ## Dependencies
+
 Tested with Node.js lts/jod (v22). On Mac and Linux, use
 [Node Version Manager](https://github.com/nvm-sh/nvm) (nvm) to manage multiple
 Node versions.
 
-Package manager is npm.
+Package manager is npm. Notice lack of `package-lock.json`. It will be created
+first time you run `npm install`. That's intentional and is supposed to ensure
+you get latest dependency (minor version) updates.
 
 ```shell
 # run once:
@@ -24,7 +29,9 @@ nvm install-latest-npm
 nvm use # will use .nvmrc
 npm install
 ```
+
 ## Development
+
 First, update [package.json](package.json): name, description, author, license.
 
 Second, update `<title>` tag in [index.html](src/index.html).
@@ -38,7 +45,7 @@ npm run format
 npm run test
 ```
 
-To test with production web server, use Docker Compose. It will start Nginx 
+To test with production web server, use Docker Compose. It will start Nginx
 container. Nginx will run in debug mode. If app is rebuilt while the container
 is running, refreshing the browser page is sufficient, because `dist` folder is
 mounted as a volume.
@@ -49,6 +56,7 @@ docker compose down
 ```
 
 ## Production
+
 ```shell
 npm run build
 docker build --tag your-web-application .
