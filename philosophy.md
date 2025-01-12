@@ -14,7 +14,7 @@
   - [TODO: Routing](#todo-routing)
   - [TODO: Internationalization and Localization](#todo-internationalization-and-localization)
   - [Graphical User Interface](#graphical-user-interface)
-  - [TODO: Test Automation](#todo-test-automation)
+  - [Test Automation](#test-automation)
   - [Deployment](#deployment)
 
 ## Integrated Development Environment (IDE)
@@ -134,22 +134,20 @@ formatting potentially buggy code is redundant.
 
 ## Bundling
 
-Remembering the Webpack days, the configuration file would become
-overcomplicated. One of the reasons is plugin management. Everything, except
-code, required a plugin: CSS, images, fonts. [Rollup][rollup], seems to follow
-the same philosophy: minimal core, extendable with plugins. It's credibility
-increased after [Vite][vite] started using it for production builds. The
-template's author shall monitor exciting development of these tools, however,
-Vite's lazy building tech does come with some issues. It can interfere with
-automated tests, especially the one using Cypress framework.
+Reflecting on the days of Webpack, configuration files often became overly
+complex. A significant contributor to this was plugin management. Nearly
+everything beyond the core code — like CSS, images, and fonts—required a
+dedicated plugin. Additionally, Webpack’s core architecture was designed during
+the dominance of Node.js’ CommonJS (CJS) modules, rather than modern ES Modules
+(ESM), which are now a web standard. This legacy design remains a limitation.
 
-This template prioritizes application development over build configuration,
-therefore, [Parcel][parcel] bundler is used. Parcel is designed to be "zero
-config" providing sensible defaults out of the box. It can handle most use
-cases, without configuration or plugins: TypeScript, CSS, images, fonts. It can
-transpile TypeScript to JavaScript, without reliance on Microsoft's `tsc`. It's
-own compiler is much faster, because it doesn't do type checking. A dev server
-is also included.
+Enter Vite, the promising new contender. It’s exceptionally fast, particularly
+in development mode, where it builds ES modules on demand. This approach is
+especially beneficial for large, complex applications, like the one this
+template targets. Further performance improvements come from its use of
+[esbuild][esbuild] and [swc][swc] instead of [Babel][babel]. Moreover, Vite
+supports critical features for modern web applications out of the box, including
+TypeScript, CSS, and SVG.
 
 ## State Management
 
@@ -234,14 +232,19 @@ reasons:
 - React based,
 - TypeScript ready.
 
-## TODO: Test Automation
+## Test Automation
 
-Jest is the default test framework in the React ecosystem. It's enhanced by
-React Testing Library, which enables writing accessible and maintainable DOM
-queries. Jest doesn't paint the GUI, like a browser does, however, visual
-feedback remains an important aspect of frontend testing. That's where Cypress
-comes in. It can paint interactive snapshots of the GUI so that engineers can
-easily and intuitively debug issues.
+Jest has long been the go-to testing framework in the React ecosystem. However,
+it is starting to show its age. While it supports modern ES syntax and
+TypeScript with the help of [Babel][babel], this approach is significantly
+slower compared to modern alternatives written in compiled languages, which
+deliver highly optimized native executables. To fully leverage the advantages
+provided by the preferred bundler ([Vite][vite]), [Vitest][vitest] has been
+chosen as the default test runner.
+
+To enable TSX components testing [React Testing Library][rtl] and [JSDOM][jsdom]
+libraries are used. RTL depends on JSDOM to render React components without a
+browser and provides accessible DOM queries, which ensure test maintainability.
 
 ## Deployment
 
@@ -277,3 +280,10 @@ with minimal configuration, furthermore, it has an official Docker image.
 [clsx]: https://github.com/lukeed/clsx
 [tailwind]: https://tailwindcss.com/
 [headlessui]: https://headlessui.com/
+[esbuild]: https://esbuild.github.io/
+[swc]: https://swc.rs/
+[babel]: https://babeljs.io/
+[vitest]: https://vitest.dev/
+[rtl]:
+  https://testing-library.com/docs/react-testing-library/setup/#using-without-jest
+[jsdom]: https://github.com/jsdom/jsdom
