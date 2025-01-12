@@ -2,6 +2,7 @@ import clsx from "clsx";
 // import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import logo from "./assets/logo.svg";
+import "./index.css";
 
 const headerBaseCls = [
   "col-start-1",
