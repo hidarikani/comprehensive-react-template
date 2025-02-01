@@ -10,7 +10,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest --environment=jsdom",
-    "lint": "eslint --cache --fix --ext .json,.ts,.tsx  src",
+    "lint": "eslint src",
     "format": "prettier src --write"
   },
   "browserslist": [
