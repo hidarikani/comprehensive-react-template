@@ -1,0 +1,8 @@
+{
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+  ],
+  "eslint.useFlatConfig": true,
+  "typescript.validate.enable": false
+}

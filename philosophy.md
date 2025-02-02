@@ -136,7 +136,7 @@ formatting potentially buggy code is redundant.
 
 Reflecting on the days of Webpack, configuration files often became overly
 complex. A significant contributor to this was plugin management. Nearly
-everything beyond the core code — like CSS, images, and fonts—required a
+everything beyond the core code — like CSS, images, and fonts — required a
 dedicated plugin. Additionally, Webpack’s core architecture was designed during
 the dominance of Node.js’ CommonJS (CJS) modules, rather than modern ES Modules
 (ESM), which are now a web standard. This legacy design remains a limitation.
