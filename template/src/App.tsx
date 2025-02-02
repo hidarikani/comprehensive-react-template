@@ -81,8 +81,6 @@ const mainCls = clsx(
   main2xlCls,
 );
 
-const foo = 1;
-
 function App() {
   return (
     <>
