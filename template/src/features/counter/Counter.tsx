@@ -19,7 +19,7 @@ export function Counter() {
   const incrementValue = Number(incrementAmount) || 0;
 
   return (
-    <>
+    <div>
       <h2 id="label-counter">Counter Controlled By Redux</h2>
       <span>Current counter value is {count}</span>
       <Button
@@ -62,6 +62,6 @@ export function Counter() {
       >
         Add If Odd
       </Button>
-    </>
+    </div>
   );
 }
