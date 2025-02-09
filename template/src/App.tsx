@@ -75,6 +75,8 @@ const mainXlCls = ["xl:col-start-6", "xl:col-span-6"];
 const main2xlCls = ["2xl:col-start-5", "2xl:col-span-5"];
 const mainCls = clsx(mainBaseCls, mainLgCls, mainXlCls, main2xlCls);
 
+const worldState = [1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0, 1, 0, 1, 0];
+
 function App() {
   return (
     <>
@@ -88,7 +90,7 @@ function App() {
       <div className={navOverlayCls}></div>
       <main className={mainCls}>
         <Counter />
-        <World className="grow" />
+        <World className="grow" worldState={worldState} />
       </main>
       <div className="fixed bottom-0 right-0 m-4 z-50 p-3 bg-blue-500 text-white rounded-lg shadow-lg">
         <span>Base </span>
