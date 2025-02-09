@@ -1,6 +1,7 @@
 # Philosophy
 
 - [Philosophy](#philosophy)
+  - [Domain](#domain)
   - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
   - [Execution Environment](#execution-environment)
   - [Package Manager](#package-manager)
@@ -16,6 +17,20 @@
   - [Graphical User Interface](#graphical-user-interface)
   - [Test Automation](#test-automation)
   - [Deployment](#deployment)
+
+## Domain
+
+A common approach to showcasing technology and comparing frameworks is by
+building a to-do app, as seen in [TodoMVC][todo].
+
+To make things more engaging, I’ve taken a slightly different approach—one that
+is more graphical yet widely recognized: Conway’s Game of Life. For a detailed
+explanation of the rules, refer to its [Wikipedia page][gol].
+
+This template brings the Game of Life to life as a demonstration of key
+front-end concepts. It showcases state management with Redux for storing the
+world state, front-end routing for seamless navigation between the world and
+settings views, and React’s rendering capabilities through animated world cells.
 
 ## Integrated Development Environment (IDE)
 
@@ -287,3 +302,5 @@ with minimal configuration, furthermore, it has an official Docker image.
 [rtl]:
   https://testing-library.com/docs/react-testing-library/setup/#using-without-jest
 [jsdom]: https://github.com/jsdom/jsdom
+[todo]: https://todomvc.com/
+[gol]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
