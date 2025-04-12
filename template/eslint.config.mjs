@@ -16,7 +16,9 @@ export default tsEslintConfig(
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat["jsx-runtime"],
   tsEslintConfigs.recommendedTypeChecked,
-  eslintConfigPrettier, // Disable rules related to code style
+  // Disable rules related to code style
+  // Must be last because it disables some JSX and TypeScript rules
+  eslintConfigPrettier,
   {
     files: ["**/*.{ts,tsx}", "!**/*.spec.{ts,tsx}"],
     languageOptions: {
