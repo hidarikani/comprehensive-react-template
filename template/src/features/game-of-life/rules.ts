@@ -1,3 +1,7 @@
+type Neighbors = {
+  count: number;
+};
+
 const evolve = (target: number, neighbors: Neighbors) => {
   if (neighbors.count < 0 || neighbors.count > 8) {
     throw new Error(`Invalid neighbor count ${neighbors.count}`);

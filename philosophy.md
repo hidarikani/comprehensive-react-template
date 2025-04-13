@@ -7,6 +7,9 @@
   - [Package Manager](#package-manager)
   - [Programming Language](#programming-language)
   - [Linting](#linting)
+    - [Common Code Quality Issues](#common-code-quality-issues)
+    - [Environment Considerations](#environment-considerations)
+    - [Template Specifics](#template-specifics)
   - [Code Formatting](#code-formatting)
   - [Committing](#committing)
   - [Bundling](#bundling)
@@ -99,13 +102,70 @@ specified in `package.json` under the `@types/` namespace.
 
 ## Linting
 
-Common code quality issues are extensively documented and can be fixed with a
-linter. The most popular linter for JavaScript is ESLint. ESLint is also the
-recommended way to lint TypeScript. To enable TS support [a plugin][ts-eslint]
-must be installed. It depends on `tsc` to function and has two modes: type-aware
-and type-ignorant. On one hand, the type-aware mode is more accurate, on the
-other hand, it is slower. This template prioritizes code quality, therefore, the
-type-aware mode is used.
+### Common Code Quality Issues
+
+Common code quality issues that affect most codebases have been extensively
+documented by the developer community. Detecting and, in some cases,
+automatically fixing these issues is made possible by tools known as linters.
+
+The most popular linter for JavaScript is ESLint. Installing ESLint is
+straightforward, but configuring it can introduce some complexity due to its
+flexibility and wide range of options. ESLint supports various rule sets
+(presets), depending on the technologies and syntax used in your project:
+
+- Vanilla JavaScript: The specific rule set depends on the ECMAScript version
+  you target.
+- JSX: When working with React, JSX support is essential.
+
+- TypeScript: ESLint can be configured to lint TypeScript code with or without
+  type checking. Type-aware linting provides more accurate results but can
+  significantly slow down linting in large projects.
+
+### Environment Considerations
+
+Another important aspect of linting is understanding the runtime environments
+involved. In modern single-page applications (SPAs), JavaScript is used both in
+the browser and in development tooling like automated tests.
+
+However, different environments expose different global variables and APIs. For
+example:
+
+- Node.js (commonly used for tests and tooling) provides APIs like `fs` (file
+  system) but lacks browser-specific globals like `window` or `document`.
+- Browsers (where the app runs) support DOM-related globals but do not include
+  Node-specific modules.
+
+This distinction matters for linting. ESLint can be configured to recognize the
+correct set of globals for each environment:
+
+- For browser code, configure ESLint to recognize browser globals like window,
+  document, etc.
+- For test files running in Node configure ESLint to recognize Node globals and
+  the testing framework’s global API (like describe, it, expect).
+
+### Template Specifics
+
+This template includes [ESLint configuration][eslint-config] which includes the
+following presets:
+
+- [ESLint's recommended JavaScript rules][eslint-recommended],
+- [React rules][eslint-react] including JSX.
+- [TypesScript rules][eslint-ts], including type aware ones.
+- Code style rules that might conflict with Prettier have been disabled by a
+  [special preset][eslint-prettier].
+
+Two TypeScript projects have been created to differentiate between browser and
+Node.js:
+
+- [tsconfig.app.json][ts-app] used by Vite to produce output runnable in the
+  browser environment.
+- [tsconfig.node.json][ts-node] used by Vitest and ESLint to produce output
+  runnable in Node.js environment.
+
+When Vite or Vitest are starting up they look at [tsconfig.json][ts] and pick
+the environment that suits their needs. To keep things simple, tests are
+detected only if they end with `.spec.{ts,tsx}`, which means files ending with
+`.test.{ts,tsx}` will be ignored.
 
 ## Code Formatting
 
@@ -277,9 +337,23 @@ application in a Docker container.
 Nginx is an efficient, production ready web server that can serve static files
 with minimal configuration, furthermore, it has an official Docker image.
 
+<!-- Internal -->
+
 [extensions]: /template/.vscode/extensions.json
 [launch]: /template/.vscode/launch.json
 [deno]: https://deno.com/
+[eslint-config]: /template/eslint.config.mjs
+[ts]: /template/tsconfig.json
+[ts-app]: /template/tsconfig.app.json
+[ts-node]: /template/tsconfig.node.json
+[eslint-prettier]: https://www.npmjs.com/package/eslint-config-prettier
+
+<!-- External -->
+
+[eslint-recommended]: https://eslint.org/docs/latest/rules/
+[eslint-react]:
+  https://github.com/jsx-eslint/eslint-plugin-react?tab=readme-ov-file#list-of-supported-rules
+[eslint-ts]: https://typescript-eslint.io/rules/
 [zipfs]:
   https://marketplace.visualstudio.com/items?itemName=arcanis.vscode-zipfs
 [ts-eslint]: https://typescript-eslint.io/
