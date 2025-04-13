@@ -163,7 +163,9 @@ Node.js:
   runnable in Node.js environment.
 
 When Vite or Vitest are starting up they look at [tsconfig.json][ts] and pick
-the environment that suits their needs.
+the environment that suits their needs. To keep things simple, tests are
+detected only if they end with `.spec.{ts,tsx}`, which means files ending with
+`.test.{ts,tsx}` will be ignored.
 
 ## Code Formatting
 

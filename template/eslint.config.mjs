@@ -10,7 +10,7 @@ import {
 
 export default tsEslintConfig(
   {
-    ignores: ["**/*.{js,mjs,json,css,svg}"],
+    ignores: ["**/*.{js,mjs,json,css,svg}", "**/*.test.{ts,tsx}"],
   },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
